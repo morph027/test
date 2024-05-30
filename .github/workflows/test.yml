@@ -24,7 +24,6 @@ jobs:
         exclude:
           - ubuntu: "jammy"
             php: "8.1"
-            arch: "aarch64"
           - ubuntu: "jammy"
             php: "8.2"
     steps:
