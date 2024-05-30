@@ -1,0 +1,30 @@
+---
+# yamllint disable rule:line-length
+name: test
+
+# yamllint disable rule:truthy
+on:
+  - push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ubuntu:
+          - "focal"
+          - "jammy"
+        php:
+          - "8.1"
+          - "8.2"
+          - "8.3"
+        arch:
+          - "amd64"
+          - "aarch64"
+        exclude:
+          - {"ubuntu": "focal", "php": ["8.1", "8.2"], "arch": "aarch64"}
+    steps:
+      - name: Test ${{ matrix.ubuntu }}|${{ matrix.php }}|${{ matrix.arch }}
+        id: test-${{ matrix.ubuntu }}-${{ matrix.php }}-${{ matrix.arch }}
+        run:
+          uptime
