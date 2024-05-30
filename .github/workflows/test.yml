@@ -25,6 +25,6 @@ jobs:
           - {"ubuntu": "focal", "php": ["8.1", "8.2"], "arch": "aarch64"}
     steps:
       - name: Test ${{ matrix.ubuntu }}|${{ matrix.php }}|${{ matrix.arch }}
-        id: test-${{ matrix.ubuntu }}-${{ matrix.php }}-${{ matrix.arch }}
+        id: test
         run:
           uptime
