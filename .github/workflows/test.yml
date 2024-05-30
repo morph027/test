@@ -27,7 +27,6 @@ jobs:
             arch: "aarch64"
           - ubuntu: "jammy"
             php: "8.2"
-            arch: "aarch64"
     steps:
       - name: Test ${{ matrix.ubuntu }}|${{ matrix.php }}|${{ matrix.arch }}
         id: test
